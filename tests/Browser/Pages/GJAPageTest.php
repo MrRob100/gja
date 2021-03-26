@@ -10,11 +10,11 @@ class GJAPageTest extends DuskTestCase
 {
     public function testHitDegiro()
     {
-        Log::info('testing');
-
-        dd('pre browse');
+        Log::info('testing phase 1');
 
         $this->browse(function (Browser $browser) {
+
+            Log::info('testing in browse');
 
 //            dd($this->jam);
 
@@ -39,7 +39,10 @@ class GJAPageTest extends DuskTestCase
                 ->waitForText('PLACE ORDER')
                 ->screenshot('outcome');
 
-            $text = $browser->text('selector');
+//            $text = $browser->text('selector');
+
+            Log::info('testing after visit');
+
 
             //        $output = $browser->script([
 //            'document.body.scrollTop = 0',
